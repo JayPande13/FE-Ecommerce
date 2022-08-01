@@ -1,0 +1,41 @@
+.logo {
+  height: 48px;
+  margin-top: 16px;
+  margin-left: 23px;
+}
+.logo-collapsed {
+  height: auto;
+  width: 70px;
+  object-fit: contain;
+  margin: 12px 20px 10px 6px;
+}
+
+nz-header {
+  position: relative;
+  width: 100%;
+  padding:0%;
+  line-height: 64px;
+  
+}
+
+.layout{
+min-height: 100vh;
+}
+nz-content {
+  margin: 0 16px;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  min-height: 360px;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.header_menu_logo {
+  width: 100px;
+  margin: 6px 0px 0px 2px;
+}

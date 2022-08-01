@@ -1,0 +1,58 @@
+<nz-layout class="layout">
+  <nz-sider
+    nzCollapsible
+    nzWidth="150px"
+    nzTheme="dark"
+    [(nzCollapsed)]="collapsed"
+    nzBreakpoint="lg" 
+  >
+    <div class="logo" *ngIf="collapsed == false">
+      <img style="padding-bottom: 100px;"
+        routerLink="/"
+        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        class="header_menu_logo"
+        alt=""
+      />
+    </div>
+    <div *ngIf="collapsed == true" ><img routerLink="/" src="https://banner2.cleanpng.com/20180426/frw/kisspng-amazon-com-amazon-product-advertising-api-affiliat-5ae1f3844d2e57.2702736315247573803161.jpg" class="logo-collapsed" alt=""></div>
+    <ul nz-menu nzMode="inline">
+      <li nz-menu-item>
+        <i nz-icon nzType="pie-chart"></i>
+        <span>Option 1</span>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="desktop"></i>
+        <span>Option 2</span>
+      </li>
+      <li nz-submenu nzTitle="User" nzIcon="user">
+        <ul>
+          <li nz-menu-item>Tom</li>
+          <li nz-menu-item>Bill</li>
+          <li nz-menu-item>Alex</li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Team" nzIcon="team">
+        <ul>
+          <li nz-menu-item>Team 1</li>
+          <li nz-menu-item>Team 2</li>
+        </ul>
+      </li>
+      <li nz-menu-item>
+        <i nz-icon nzType="file"></i>
+        <span>File</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+      <nz-header>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+          <li nz-menu-item (click)="navigate()" > 1</li>
+          <router-outlet></router-outlet>
+          <li nz-menu-item> <input nz-input placeholder="Basic usage" style="width:500px ;margin-left:100px" /></li>
+        </ul>
+      </nz-header>
+    <nz-content>
+      <div class="inner-content"></div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
