@@ -19,7 +19,6 @@ export class MainHeaderComponent implements OnInit {
     
   }
   navigate(){
-    console.log('called')
     this.router.navigate(['/sign-up'])  }
 
 }

@@ -45,11 +45,14 @@
   </nz-sider>
   <nz-layout>
       <nz-header>
-        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+        <div nz-row>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal" nz-col>
           <li nz-menu-item (click)="navigate()" > 1</li>
-          <router-outlet></router-outlet>
-          <li nz-menu-item> <input nz-input placeholder="Basic usage" style="width:500px ;margin-left:100px" /></li>
         </ul>
+        <div nz-col>
+         <input nz-input placeholder="Basic usage" style="width:500px ;margin-left:200px" />
+        </div>
+      </div>
       </nz-header>
     <nz-content>
       <div class="inner-content"></div>
