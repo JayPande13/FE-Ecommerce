@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { ModalBuilderService } from 'src/app/Services/modal-builder.service';
+import { SignUpComponent } from '../Sign-Up/Sign-Up.component';
 
 @Component({
   selector: 'app-Main-Header',
@@ -9,16 +12,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MainHeaderComponent implements OnInit {
   collapsed = false;
 
-  constructor(private routes:ActivatedRoute,private router:Router) {
+  constructor(private routes:ActivatedRoute,private router:Router,private modal: ModalBuilderService) {
    }
 
   ngOnInit() {
   }
   public onCollapseChange(event:any){
     this.collapsed= event;
+   
     
   }
   navigate(){
-    this.router.navigate(['/sign-up'])  }
+    this.modal.openModal(SignUpComponent,{
+      data:[]
+    },'Sign Up',700) }
 
 }

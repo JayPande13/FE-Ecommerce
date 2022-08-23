@@ -1,28 +1,47 @@
-<form nz-form [formGroup]="signUpForm" class="login-form" >
-  <nz-form-item>
-    <nz-form-control nzErrorTip="Please input your username!">
-      <nz-input-group nzPrefixIcon="user">
-        <input type="text" nz-input formControlName="userName" placeholder="Username" />
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-control nzErrorTip="Please input your Password!">
-      <nz-input-group nzPrefixIcon="lock">
-        <input type="password" nz-input formControlName="password" placeholder="Password" />
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-  <!-- <div nz-row class="login-form-margin">
-    <div nz-col [nzSpan]="12">
-      <label nz-checkbox formControlName="remember">
-        <span>Remember me</span>
-      </label>
-    </div>
-    <div nz-col [nzSpan]="12">p
-      <a class="login-form-forgot">Forgot password</a>
-    </div>
-  </div> -->
-  <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-  <!-- <a>register now!</a> -->
-</form>
+
+<div style="margin-left: 180px;" *ngIf="userPresent">
+  <form nz-form [formGroup]="signUpForm" class="login-form">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your email!">
+          <input type="text" nz-input formControlName="email" placeholder="Email" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+          <input type="password" nz-input formControlName="password" placeholder="Password" />
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button class="login-form-button login-form-margin" (click)="submit()" [nzType]="'primary'">Log in</button>
+    <button nz-button class="login-form-button login-form-margin" (click)="userChange()" [nzType]="'default'">Create Account</button>
+  </form>
+</div>
+<div style="margin-left: 180px;" *ngIf="newUser">
+  <form nz-form [formGroup]="signUpForm" class="login-form" (ngSubmit)="submit()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Name!">
+        <input type="text" nz-input formControlName="name" placeholder="Name" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your email!">
+          <input type="text" nz-input formControlName="email" placeholder="Email" />
+      </nz-form-control>
+    </nz-form-item>   
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Phone!">
+        <input type="text" nz-input formControlName="phone" placeholder="Phone" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+          <input type="password" nz-input formControlName="password" placeholder="Password" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please enter maching Password!">
+          <input type="password" nz-input formControlName="confirmPassword" placeholder="Confirm Password" />
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Sign Up</button>
+  </form>
+</div>

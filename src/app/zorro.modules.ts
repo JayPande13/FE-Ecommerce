@@ -6,6 +6,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 
 
@@ -17,5 +18,6 @@ export const ZorroModules =[
     NzMenuModule,
     NzInputModule,
     NzFormModule,
-    NzButtonModule
+    NzButtonModule,
+    NzModalModule
 ]
