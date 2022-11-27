@@ -25,6 +25,9 @@ export class MainHeaderComponent implements OnInit {
   navigate(){
     this.modal.openModal(SignUpComponent,{
       data:[]
-    },'Sign Up',700) }
+    },'Sign Up',700).subscribe((res:any)=>{
+      console.log({res})
+    })
+   }
 
 }

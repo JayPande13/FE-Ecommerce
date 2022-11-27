@@ -14,6 +14,9 @@ baseURL = 'http://localhost:9000/api/v1'
 addNewUser(user:any){
   return this.http.post<any>(`${this.baseURL}/user/create` ,user);
 }
+loginUser(user:any){
+  return this.http.post<any>(`${this.baseURL}/user/login` ,user);
+}
 
 
 }
